@@ -1,0 +1,55 @@
+#:kivy 1.10.0
+
+<Fruit>:
+    canvas:
+        Color:
+            rgb: (1,0,0)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<SnakeHead>:
+    canvas:
+        Color:
+            rgb: (0,0,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<SnakeTail>:
+    canvas:
+        Color:
+            rgba: (0,0,1,.5)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<SnakeGame>:
+    head: snake_head
+    fruit: snake_fruit
+
+    SnakeHead:
+        id: snake_head
+        size: root.player_size, root.player_size
+    Fruit:
+        id: snake_fruit
+        size: root.player_size, root.player_size
+    Label:
+        size: root.player_size, root.player_size
+        # pos: root.player_size/2, root.window_height-2*root.player_size
+        pos: root.player_size/2, 10.5*root.player_size
+        color: 0,0,0,1
+        text:  "Speed Level: " + str(root.speed_index)
+    Label:
+        size: root.player_size, root.player_size
+        # pos: root.player_size/2, root.window_height-2*root.player_size
+        pos: root.player_size/2, 10*root.player_size
+        color: 0,0,0,1
+        text:  "Score: " + str(root.score)
+
+    Button:
+        text:'Restart'
+        color: 1,1,1,1
+        pos: root.size[0] / 100, root.size[1] / 100
+        on_press: root.restart_game()
+

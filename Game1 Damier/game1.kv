@@ -1,0 +1,24 @@
+#:kivy 2.1.0
+
+<MyLayout>:
+    mywidge: widget
+    orientation: 'horizontal'
+    MyWidget:
+        id: widget
+        size: (700, 700)
+        size_hint: (None, None)  
+        
+    Button:
+        text:'New'
+        on_press: root.random_grid()
+
+
+     
+<MyWidget>:
+    id: my_widget
+
+
+
+
+
+        
