@@ -38,8 +38,8 @@ class MyWidget(Widget):
     def color_canvas(self):   
         """
         Crée une grille à partir de GRID.
-        Donne aux cases a valeur 1 la couleur noire.
-        Donne aux cases a valeur 0 la couleur blanche.
+        Donne aux cases à valeur 1 la couleur noire.
+        Donne aux cases à valeur 0 la couleur blanche.
         Place notre avatar en haut à gauche de la grille.
         """
         global GRID, SIZE
@@ -64,7 +64,7 @@ class MyWidget(Widget):
         Détermine le mode de déplacement de notre avatar.
         S'il est sur une case blanche, il se déplace selon les fléches directionnelles.
         S'il est sur une case noire, il se déplace à l'opposé des flèches directionnelles.
-        Termine la partie lorsque le joueur sort du plateau.
+        Empeche le joueur de sortir du plateau.
         """
         global SIZE
         cellheight = self.height//SIZE
